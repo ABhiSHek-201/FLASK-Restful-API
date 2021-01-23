@@ -1,0 +1,9 @@
+{
+  "params":
+  {
+    "local_uri": "mysql://root:@localhost/prac_task",
+    "user": "abhi",
+    "password": "yadav",
+    "upload_location": "C:\\Users\\DELL\\Desktop\\Rest Api\\images"
+  }
+}
