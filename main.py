@@ -29,7 +29,7 @@ class DishesModel(db.Model):
 	def __repr__(self):
 		return f"Dish(name={self.name}, cost={self.cost}, image={self.image})"
 
-db.create_all() #used only once to create DB at start
+#db.create_all() #used only once to create DB at start
 
 user_args=reqparse.RequestParser()
 user_args.add_argument("uname",type=str,help="Username can't be empty", location='headers', required=True)
