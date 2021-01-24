@@ -9,6 +9,7 @@ import werkzeug
 app=Flask(__name__)
 api=Api(app)
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///database.db'
+# app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:@localhost/prac_task'
 db=SQLAlchemy(app)
 
 class users(db.Model):
@@ -28,7 +29,7 @@ class DishesModel(db.Model):
 	def __repr__(self):
 		return f"Dish(name={self.name}, cost={self.cost}, image={self.image})"
 
-db.create_all() #used only once to create DB at start
+#db.create_all() #used only once to create DB at start
 
 user_args=reqparse.RequestParser()
 user_args.add_argument("uname",type=str,help="Username can't be empty", location='headers', required=True)
@@ -177,4 +178,8 @@ api.add_resource(Dishes, "/dishes")
 api.add_resource(signup, "/signup")
 
 if __name__=="__main__":
+	# app.listen(process.env.PORT or 3000, 
+	# function()
+ #  		console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+	# );
 	app.run(debug=True)
