@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api,reqparse,fields,marshal_with,abort
 from flask_sqlalchemy import SQLAlchemy
-import json
+# import json
 import werkzeug
 # with open("config.json",'r') as c:
 #     params=json.load(c)['params']
@@ -178,8 +178,4 @@ api.add_resource(Dishes, "/dishes")
 api.add_resource(signup, "/signup")
 
 if __name__=="__main__":
-	# app.listen(process.env.PORT or 3000, 
-	# function()
- #  		console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-	# );
 	app.run(debug=True)
